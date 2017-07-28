@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>RecordsView</members>
+        <members>OpportunityList</members>
+        <members>OpporRecordViewEvent</members>
+        <members>OpporRecordView</members>
+        <members>AccountList</members>
+        <members>AccountOpportunities</members>
+        <members>AccountRelatedOpporEvent</members>
+        <members>AccountRecordView</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>light_accountOppor_c</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>AccountOpportunities</members>
+        <name>FlexiPage</name>
+    </types>
+    <version>38.0</version>
+</Package>

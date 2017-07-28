@@ -1,0 +1,48 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="light_accountOppor_c">
+    <!-- define a attribute to hold the opportunity list -->
+    <aura:attribute name="oppList" type="Opportunity[]" default="[{'Id':'', 'Name':''}]"/>
+    
+    <aura:attribute name="paginationOppList" type="Opportunity[]" default="[]"/>
+    <aura:attribute name="pageSize" type="Integer" default="10"/>
+ 	<aura:attribute name="totalSize" type="Integer"/>
+    <aura:attribute name="start" type="Integer" />
+ 	<aura:attribute name="end" type="Integer"/>
+    
+    <aura:handler action="{!c.accRelatedOppor}" event="c:AccountRelatedOpporEvent" />
+    
+    <!-- Registering opporRecordView Event -->
+    <aura:registerEvent name="OpporEvent" type="c:OpporRecordViewEvent" />
+    
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+      <thead>
+        <tr class="slds-text-title_caps">
+          <th scope="col" class="">
+            <div class="slds-truncate" title="Opportunity Id">Opportunity ID</div>
+          </th>
+          <th scope="col" class="">
+            <div class="slds-truncate" title="Opportunity Name">Opportunity Name</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+          <aura:iteration items="{!v.paginationOppList}" var="opp" >
+              <tr>
+                  <th scope="row" data-label="Opportunity id" class="">
+                      <div class="slds-truncate" title="Id"><ui:outputText value="{!opp.Id}" click="{!c.opporEvent}" aura:id="{!opp.Id}"/></div>
+                  </th>
+                  <td data-label="Opportunity Name" class="">
+                    <div class="slds-truncate" title="Name">{!opp.Name}</div>
+                  </td>
+              </tr>
+          </aura:iteration>
+      </tbody>
+	</table>
+	<div>
+    <ui:button aura:id="buttonTest" buttonTitle="Click to see what you put into the field" class="button" label="Test Data" press="{!c.testData}"/>    
+    </div>
+    <div>
+    <!-- pagination buttons -->
+    	<lightning:button label="Previous" disabled="{!v.start == 0}"  onclick="{!c.previous}" />
+    	<lightning:button label="Next" disabled="{!v.end >= (v.totalSize-1)}" onclick="{!c.next}" />
+    </div>
+</aura:component>

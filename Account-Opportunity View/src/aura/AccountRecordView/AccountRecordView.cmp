@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="id" type="String" default="00146000002dJGvAAM" />
+    <aura:handler name="init" value="{!v.id}" action="{!c.updateRecordView}"/>
+    
+    <div aura:id="container">
+        <force:recordView recordId="{!v.id}" type="FULL"/>
+    </div>
+    <ui:inputText value="{!v.id}"/>
+</aura:component>

@@ -1,0 +1,10 @@
+<aura:component >
+	<aura:attribute name="id" type="String" default="" />
+    <div>
+        <ui:outputText value="Record Id : " />
+    	<ui:outputText value="{!v.id}"/>
+    </div>
+    <br />
+   	
+    <force:recordView recordId="{!v.id}" type="FULL"/>
+</aura:component>

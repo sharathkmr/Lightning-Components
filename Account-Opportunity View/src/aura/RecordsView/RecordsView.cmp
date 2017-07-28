@@ -1,0 +1,8 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <aura:attribute name="opporId" type="string" default="" />
+    
+    <!-- handling the event -->
+    <aura:handler action="{!c.OpporView}" event="c:OpporRecordViewEvent" />
+    
+    <c:OpporRecordView id="{!v.opporId}" />
+</aura:component>

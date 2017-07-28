@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Event to broadcast the id of account to get the related opportunities and display it" >
+    <aura:attribute name="acc" type="string" />
+</aura:event>

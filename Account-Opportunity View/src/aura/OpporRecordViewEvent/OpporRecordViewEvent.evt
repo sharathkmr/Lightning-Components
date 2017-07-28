@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Event to send the opportunity id from OpportunityList to OpporRecordView component" >
+    <aura:attribute name="id" type="string" />
+</aura:event>
